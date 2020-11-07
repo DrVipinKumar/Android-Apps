@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "523502622117",
+    "firebase_url": "https://myfcmproject-2be0a.firebaseio.com",
+    "project_id": "myfcmproject-2be0a",
+    "storage_bucket": "myfcmproject-2be0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523502622117:android:6dfc0bfaca6a6b55",
+        "android_client_info": {
+          "package_name": "edu.kiet.www.myfcmproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523502622117-1vole7ujrbo277g7surjsrrvvdu1npsm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.kiet.www.myfcmproject",
+            "certificate_hash": "f6f4bc6bb1b8ded28b6086c729feed0775ff525c"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7WiN3L-315dKMK3yldObx7LXSmt_ZG3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523502622117-7s4ah5smqn8afn1pc3nd0j5njji1vu89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

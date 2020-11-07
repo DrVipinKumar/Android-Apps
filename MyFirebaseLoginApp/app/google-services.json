@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "822635782878",
+    "firebase_url": "https://myfirebaseloginapp-f7afd.firebaseio.com",
+    "project_id": "myfirebaseloginapp-f7afd",
+    "storage_bucket": "myfirebaseloginapp-f7afd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822635782878:android:63efcd38ee722b28",
+        "android_client_info": {
+          "package_name": "edu.kiet.www.myfirebaseloginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822635782878-44bc687jl2nk1suk7hibvfvdl2oa2ksl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.kiet.www.myfirebaseloginapp",
+            "certificate_hash": "f6f4bc6bb1b8ded28b6086c729feed0775ff525c"
+          }
+        },
+        {
+          "client_id": "822635782878-6et8k4d7ksg6imk8dcfmj65apclfeb99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCywXVzBagRJjbTgDdrQP0qS0cPIP5_noE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822635782878-6et8k4d7ksg6imk8dcfmj65apclfeb99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

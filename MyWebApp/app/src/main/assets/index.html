@@ -1,0 +1,260 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+ h3{color:red}
+ b{color:red}
+  pre{color:blue;
+	font-size:18;
+	font-weight:bold;
+	font-style:italic
+	 overflow-x: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap !important;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	}
+</style>
+</head>
+<body>
+<h3>Interface in Kotlin</h3>
+An interface declares a series of methods and properties that must be implemented later by one or more classes, also an interface in Kotlin 
+may have implemented methods. The interfaces come to replace the impossibility of multiple inheritances in Kotlin. It uses the same 
+syntax as inheritance to indicate that a class implements an interface. 
+<br><br>For example, we can have two classes that represent an airplane 
+and a helicopter. Then raise an interface with a method called fly. The two classes can implement this interface and code the fly method 
+(algorithms are surely different but the behavior of flying is common to both an airplane and a helicopter)
+<br><br>
+The syntax in Kotlin for declaring an interface is:
+<pre>
+Interface [name of the interface] {
+    [Declaration of properties]
+    [Method declaration]
+    [Method implementation]
+}
+</pre>
+<br><b>Let's take some examples to understand it better</b>
+<br><br><b>Program 1:</b> Write a program to define an interface called Point that declares a method called print. Then declare 
+two classes to implement it. 
+<pre>
+interface Point {
+    fun print ()
+}
+
+class plane (val x: Int, val y: Int): Point {
+    override fun print () {
+        println ("Point in the plane: ($x, $y)")
+    }
+}
+
+class space (val x: Int, val y: Int, val z: Int): Point {
+    override fun print () {
+        println ("Point in space: ($x, $y, $z)")
+    }
+}
+
+fun main (parameter: Array &lt;String&gt;) {
+    val plane1 = plane (10, 4)
+    plane1.print ()
+
+    val space1 = space (20, 50, 60)
+    space1.print ()
+}
+</pre>
+To declare an interface in Kotlin, we use the interface keyword and then its name. Then between braces, we indicate all the headers of 
+methods, properties and methods already implemented. In our example, we declare the interface Point and we indicate that the one 
+who implements it must define a method called print without parameters and that does not return anything:
+<pre>
+interface Point {
+    fun print()
+}
+</pre>
+On the other hand, we declare two classes called plane, with two properties and space with three properties, in addition, we indicate that 
+these classes will implement the interface Point:
+<pre>
+class plane (val x: Int, val y: Int): Point {
+    override fun print () {
+        println ("Point in the plane: ($ x, $ y)")
+    }
+}
+
+class Space (val x: Int, val y: Int, val z: Int): Point {
+    override fun print () {
+        println ("Point in space: ($x, $y, $z)")
+    }
+}
+</pre>
+The syntax to indicate that a class implements an interface is equal to inheritance. If one class inherits from another it can also implement 
+one or more interfaces by comma separating each of the interfaces. The print method in each class is implemented in a different way, 
+one prints 3 properties and the other prints 2 properties. Then we define in the main function an object of class plane and another one of 
+type Space:
+<pre>
+fun main (parameter: Array &lt;String&gt;) {
+    val plane1 = plane(10, 4)
+    plane1.print ()
+    val Space1 = Space (20, 50, 60)
+    Space1.print ()
+}
+</pre>
+<br><b>Program 2:</b> Write a program to declare following interface:
+<pre>
+interface Figure {
+    fun calculateSurface (): Int
+    fun calculatePerimeter (): Int
+    fun titleResult () {
+        println ("Data of the figure")
+    }
+}
+</pre>
+Define two classes that represent a Square and a Rectangle. Implement the Figure interface in both classes. 
+<pre>
+interface figure {
+    fun calculateSurface (): Int
+    fun calculatePerimeter (): Int
+    fun titleResult () {
+        println ("Data of the figure")
+    }
+}
+
+class Square (val side: Int): figure {
+    override fun calculateSurface (): Int {
+        return side * side
+    }
+
+    override fun calculatePerimeter (): Int {
+        return side * 4
+    }
+}
+
+class Rectangle (val loadMajor: Int, val loadMinor: Int): figure {
+    override fun calculateSurface (): Int {
+        return loadMajor * loadMinor
+    }
+
+    override fun calculatePerimeter (): Int {
+        return (loadMajor * 2) + (loadMinor * 2)
+    }
+}
+
+fun main (parameter: Array &lt;String&gt;) {
+   val Square1 = Square (10)
+    Square1.titleResult ()
+    println ("Perimeter of the square: ${Square1.calculatePerimeter ()}")
+    println ("Square surface: ${Square1.calculateSurface ()}")
+
+    val rectangle1 = Rectangle (10, 5)
+    rectangle1.titleResult ()
+    println ("Rectangle perimeter: ${rectangle1.calculatePerimeter ()}")
+    println ("Square surface: ${rectangle1.calculateSurface ()}")
+}
+</pre>
+In this problem the interface Figure has two abstract methods that must be implemented by the classes and a concrete method, that is to 
+say already implemented:
+<pre>
+interface Figure {
+    fun calculateSurface (): Int
+    fun calculatePerimeter (): Int
+    fun titleResult () {
+        Println ("Data of the figure")
+    }
+}
+</pre>
+The Square class indicates that it implements the Figure interface, this makes it necessary to implement the methods CalculateSurface and 
+calculatePerimeter:
+<pre>
+class Square (val side: Int): Figure {
+    override fun calculateSurface (): Int {
+        return side * side
+    }
+
+    override fun calculatePerimeter (): Int {
+        return side * 4
+    }
+}
+</pre>
+Similarly, the Rectangle class implements the interface Figure:
+<pre>
+class Rectangle (val sideMajor: Int, val sideMinor: Int): Figure {
+    override fun calculateSurface (): Int {
+        return loadMajor * loadMinor
+    }
+
+    override fun calculatePerimeter (): Int {
+        return (loadMajor * 2) + (loadMinor * 2)
+    }
+}
+</pre>
+In the main function, we define an object of the class Square and another of the class Rectangle, then we call the methods titleResult, 
+calculatePerimeter and calculateSurface for each object:
+<pre>
+fun main (parameter: Array &lt;String&gt;) {
+    Square square1 = Square (10)
+    square1.titleResult ()
+    println ("Perimeter of the square: ${square1.calculatePerimeter ()}")
+    println ("Square surface: ${square1.calculateSurface ()}")
+    val rectangle1 = Rectangle (10, 5)
+    rectangle1.titleResult ()
+    println ("Rectangle perimeter: ${rectangle1.calculatePerimeter ()}")
+    println ("Square surface: ${rectangle1.calculateSurface ()}")
+}
+</pre>
+Acotaciones A method or function can receive as an interface parameter. Then we can pass objects of different classes that implement this 
+interface:
+<pre>
+interface Figure {
+    fun calculateSurface (): Int
+    fun calculatePerimeter (): Int
+    fun titleResult () {
+        println ("Data of the figure")
+    }
+}
+
+class Square (val side: Int): Figure {
+    override fun calculateSurface (): Int {
+        return side * side
+    }
+
+    override fun calculatePerimeter (): Int {
+        return side * 4
+    }
+}
+
+class Rectangle (val loadMajor: Int, val loadMinor: Int): Figure {
+    override fun calculateSurface (): Int {
+        return loadMajor * loadMinor
+    }
+
+    override fun calculatePerimeter (): Int {
+        return (loadMajor * 2) + (loadMinor * 2)
+    }
+}
+
+fun print (fig: Figure) {
+    println ("Perimeter: ${fig.calculatePerimeter ()}")
+    println ("Surface: ${fig.calculatesurface ()}")
+}
+fun main (parameter: Array &lt;String&gt;) { 
+val Square1 = Square (10) Square1.titleResult () 
+println ("Perimeter of the square: ${Square1.calculatePerimeter ()}") 
+println ("Square surface: ${Square1.calculateSurface ()}") 
+val rectangle1 = Rectangle (10, 5) rectangle1.titleResult () 
+println ("Rectangle perimeter: ${rectangle1.calculatePerimeter ()}")
+ println ("Square surface: ${rectangle1.calculateSurface ()}") }
+ </pre>
+The function print receives as parameter fig that is of type Figure:
+<pre>
+fun print (fig: Figure) {
+    println ("Perimeter: ${fig.calculatePerimeter ()}")
+    println ("Surface: ${fig.calculateSurface ()}")
+}
+</pre>
+In the main we can call the print function by passing both the square object1 and rectangle1:
+<pre>
+    print (square1)
+    print (rectangle1)
+	</pre>
+This is possible since both objects their classes implement the Figure interface.
+
+</body>
+</html>
